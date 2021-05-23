@@ -240,16 +240,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example-usage" class="md-nav__link">
     Example usage
   </a>
+  
+    <nav class="md-nav" aria-label="Example usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    Import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-setup" class="md-nav__link">
+    (Optional) Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-data" class="md-nav__link">
+    Load data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute" class="md-nav__link">
+    Compute
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -662,16 +689,43 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#installation" class="md-nav__link">
-    Installation
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#example-usage" class="md-nav__link">
     Example usage
   </a>
+  
+    <nav class="md-nav" aria-label="Example usage">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#import" class="md-nav__link">
+    Import
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#optional-setup" class="md-nav__link">
+    (Optional) Setup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#load-data" class="md-nav__link">
+    Load data
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compute" class="md-nav__link">
+    Compute
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
       
@@ -1201,16 +1255,8 @@ all of MD as it is not optimized for dense, information rich UIs.
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="installation">Installation<a class="anchor-link" href="#Installation">&#182;</a></h2><p>Using <code>pip</code> is the simplest way:</p>
-<div class="codehilite"><pre><code>pip install frds
-</code></pre></div>
-</div>
-</div>
-<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
-</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2 id="example-usage">Example usage<a class="anchor-link" href="#Example-usage">&#182;</a></h2><p>We start by importing relevant modules.</p>
-<p>Specifically, we import <code>funda</code> class from the <code>frds.data.wrds.comp</code> library since the demo uses only the Fundamentals Annual dataset from Compustat via WRDS.</p>
-<p>We next import the <code>setup</code> and <code>load</code> functions from <code>frds.io.wrds</code>, which are used to configure WRDS credentials and data management for WRDS datasets.</p>
+<h2 id="example-usage">Example usage<a class="anchor-link" href="#Example-usage">&#182;</a></h2><h3 id="import">Import<a class="anchor-link" href="#Import">&#182;</a></h3><p>We start by importing relevant modules.</p>
+<p>Specifically, we import the <code>funda</code> class from the <code>frds.data.wrds.comp</code> library since the demo uses only the Fundamentals Annual dataset from Compustat via WRDS. We next import the <code>setup</code> and <code>load</code> functions from <code>frds.io.wrds</code>, which are used to configure WRDS credentials and data management for WRDS datasets.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1234,8 +1280,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Then, set WRDS credentials in case later we need to download from WRDS.</p>
-<p>If <code>save_credentials=True</code>, the credentials will be stored locally in <code>credentials.json</code> at the <code>frds</code> folder created under the user's home directory, and this setup process can be skipped in the future.</p>
+<h3 id="optional-setup">(Optional) Setup<a class="anchor-link" href="#(Optional)-Setup">&#182;</a></h3><p>Then, set WRDS credentials in case later we need to download from WRDS.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1258,8 +1303,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>We now download the <code>funda</code> (Fundamentals Annual) dataset and assign it to the variable <code>FUNDA</code>.</p>
-<p><code>use_cache=True</code> will use the locally stored dataset, if any, and only initiate the download if there is no local caches. You can set it to <code>False</code> to force a new download, for example, to update the local caches.</p>
+<h3 id="load-data">Load data<a class="anchor-link" href="#Load-data">&#182;</a></h3><p>We now download the <code>funda</code> (Fundamentals Annual) dataset and assign it to the variable <code>FUNDA</code>.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
@@ -1282,7 +1326,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Let's now compute a few metrics to showcase how easy it is.</p>
+<h3 id="compute">Compute<a class="anchor-link" href="#Compute">&#182;</a></h3><p>Let's now compute a few metrics to showcase how easy it is.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -1538,7 +1582,7 @@ all of MD as it is not optimized for dense, information rich UIs.
       <div class="md-footer-copyright">
         
           <div class="md-footer-copyright__highlight">
-            Copyright &copy; 2020 frds.io
+            Copyright &copy; 2020-2021 frds.io
           </div>
         
         Made with
