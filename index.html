@@ -325,53 +325,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
-        Measures Documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Measures Documentation" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Measures Documentation
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="measures/roa/" class="md-nav__link">
-        ROA
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      <label class="md-nav__link" for="__nav_4">
         API
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="API" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           API
         </label>
@@ -385,14 +343,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
-      <label class="md-nav__link" for="__nav_4_1">
+      <label class="md-nav__link" for="__nav_3_1">
         measures
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="measures" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_1">
+        <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
           measures
         </label>
@@ -1045,7 +1003,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         
         
         <div class="CodeMirror cm-s-jupyter">
-    <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">frds.data.wrds.comp</span> <span class="kn">import</span> <span class="n">funda</span>
+    <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">frds.data.wrds.comp</span> <span class="kn">import</span> <span class="n">Funda</span>
 <span class="kn">from</span> <span class="nn">frds.io.wrds</span> <span class="kn">import</span> <span class="n">setup</span><span class="p">,</span> <span class="n">load</span>
 </pre></div>
 
@@ -1069,7 +1027,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         
         
         <div class="CodeMirror cm-s-jupyter">
-    <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">setup</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">,</span> <span class="n">save_credentials</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+    <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">setup</span><span class="p">(</span><span class="n">username</span><span class="o">=</span><span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="n">password</span><span class="o">=</span><span class="s1">&#39;password&#39;</span><span class="p">)</span>
 </pre></div>
 
         </div>
@@ -1092,7 +1050,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         
         
         <div class="CodeMirror cm-s-jupyter">
-    <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">FUNDA</span> <span class="p">:</span> <span class="n">funda</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">funda</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+    <div class="highlight-ipynb hl-python"><pre><span></span><span class="n">FUNDA</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">Funda</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 </pre></div>
 
         </div>
@@ -1117,7 +1075,7 @@ all of MD as it is not optimized for dense, information rich UIs.
         <div class="CodeMirror cm-s-jupyter">
     <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">frds.measures</span> <span class="kn">import</span> <span class="n">ROA</span>
+<span class="kn">from</span> <span class="nn">frds.measures.corporate</span> <span class="kn">import</span> <span class="n">roa</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
     <span class="p">{</span>
@@ -1127,10 +1085,8 @@ all of MD as it is not optimized for dense, information rich UIs.
         <span class="s2">&quot;Firm_Size&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">FUNDA</span><span class="o">.</span><span class="n">AT</span><span class="p">),</span>
         <span class="s2">&quot;MTB&quot;</span><span class="p">:</span> <span class="n">FUNDA</span><span class="o">.</span><span class="n">PRCC_F</span> <span class="o">*</span> <span class="n">FUNDA</span><span class="o">.</span><span class="n">CSHO</span> <span class="o">/</span> <span class="n">FUNDA</span><span class="o">.</span><span class="n">CEQ</span><span class="p">,</span>
         <span class="c1"># Or we can use the ones available in FRDS:</span>
-        <span class="c1"># e.g., ROA by default scales income by contemporneous total assets</span>
-        <span class="c1"># ROA.v2 alternatively scales income by lagged total assets</span>
-        <span class="s2">&quot;ROA_v1&quot;</span><span class="p">:</span> <span class="n">ROA</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">),</span>
-        <span class="s2">&quot;ROA_v2&quot;</span><span class="p">:</span> <span class="n">ROA</span><span class="o">.</span><span class="n">v2</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">)</span>
+        <span class="s2">&quot;ROA_v1&quot;</span><span class="p">:</span> <span class="n">roa</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">),</span>
+        <span class="s2">&quot;ROA_v2&quot;</span><span class="p">:</span> <span class="n">roa</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">,</span> <span class="n">use_lagged_total_asset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
     <span class="p">}</span>
 <span class="p">)</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </pre></div>
@@ -1314,7 +1270,7 @@ all of MD as it is not optimized for dense, information rich UIs.
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 23, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
       
     
   </small>

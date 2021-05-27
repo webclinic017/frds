@@ -345,53 +345,11 @@
         <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
       
       <label class="md-nav__link" for="__nav_3">
-        Measures Documentation
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="Measures Documentation" data-md-level="1">
-        <label class="md-nav__title" for="__nav_3">
-          <span class="md-nav__icon md-icon"></span>
-          Measures Documentation
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../measures/roa/" class="md-nav__link">
-        ROA
-      </a>
-    </li>
-  
-
-          
-        </ul>
-      </nav>
-    </li>
-  
-
-    
-      
-      
-      
-
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" >
-      
-      <label class="md-nav__link" for="__nav_4">
         API
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="API" data-md-level="1">
-        <label class="md-nav__title" for="__nav_4">
+        <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
           API
         </label>
@@ -405,14 +363,14 @@
     <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
       
-      <label class="md-nav__link" for="__nav_4_1">
+      <label class="md-nav__link" for="__nav_3_1">
         measures
         <span class="md-nav__icon md-icon"></span>
       </label>
       <nav class="md-nav" aria-label="measures" data-md-level="2">
-        <label class="md-nav__title" for="__nav_4_1">
+        <label class="md-nav__title" for="__nav_3_1">
           <span class="md-nav__icon md-icon"></span>
           measures
         </label>
@@ -1143,10 +1101,10 @@ pip install .
         
         <div class="CodeMirror cm-s-jupyter">
     <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="kn">from</span> <span class="nn">frds.data.wrds.comp</span> <span class="kn">import</span> <span class="n">funda</span>
+<span class="kn">from</span> <span class="nn">frds.data.wrds.comp</span> <span class="kn">import</span> <span class="n">Funda</span>
 <span class="kn">from</span> <span class="nn">frds.io.wrds</span> <span class="kn">import</span> <span class="n">load</span>
 
-<span class="n">FUNDA</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">funda</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
+<span class="n">FUNDA</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">Funda</span><span class="p">,</span> <span class="n">use_cache</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">obs</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="p">(</span><span class="n">FUNDA</span><span class="o">.</span><span class="n">PPENT</span> <span class="o">/</span> <span class="n">FUNDA</span><span class="o">.</span><span class="n">AT</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;Tangibility&quot;</span><span class="p">)</span>
 </pre></div>
@@ -1271,9 +1229,9 @@ pip install .
         
         
         <div class="CodeMirror cm-s-jupyter">
-    <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">frds.measures</span> <span class="kn">import</span> <span class="n">ROA</span>
+    <div class="highlight-ipynb hl-python"><pre><span></span><span class="kn">from</span> <span class="nn">frds.measures.corporate</span> <span class="kn">import</span> <span class="n">roa</span>
 
-<span class="p">(</span><span class="n">roa_v1</span> <span class="o">:=</span> <span class="n">ROA</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;ROA: IB/AT&quot;</span><span class="p">))</span>
+<span class="p">(</span><span class="n">roa_v1</span> <span class="o">:=</span> <span class="n">roa</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;ROA: IB/AT&quot;</span><span class="p">))</span>
 </pre></div>
 
         </div>
@@ -1385,7 +1343,7 @@ pip install .
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>Some measures may have variants. For example, ROA can be either computed as the income before extraordinary items scaled by contemporaneous total assets, or by lagged total assets which can be calculated by <code>ROA.v2</code>.</p>
+<p>Some measures may have variants. For example, ROA can be either computed as the income before extraordinary items scaled by contemporaneous total assets, or by lagged total assets.</p>
 
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
@@ -1396,7 +1354,7 @@ pip install .
         
         
         <div class="CodeMirror cm-s-jupyter">
-    <div class="highlight-ipynb hl-python"><pre><span></span><span class="p">(</span><span class="n">roa_v2</span> <span class="o">:=</span> <span class="n">ROA</span><span class="o">.</span><span class="n">v2</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;ROA: IB/lagged AT&quot;</span><span class="p">))</span>
+    <div class="highlight-ipynb hl-python"><pre><span></span><span class="p">(</span><span class="n">roa_v2</span> <span class="o">:=</span> <span class="n">roa</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">,</span> <span class="n">use_lagged_total_asset</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">to_frame</span><span class="p">(</span><span class="s2">&quot;ROA: IB/lagged AT&quot;</span><span class="p">))</span>
 </pre></div>
 
         </div>
@@ -1598,7 +1556,7 @@ pip install .
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 24, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
       
     
   </small>
@@ -1638,13 +1596,13 @@ pip install .
         </a>
       
       
-        <a href="../measures/roa/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../api/measures/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Next
               </span>
-              ROA
+              measures
             </div>
           </div>
           <div class="md-footer__button md-icon">
