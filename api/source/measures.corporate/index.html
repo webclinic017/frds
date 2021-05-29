@@ -368,10 +368,46 @@
 <span class="kn">from</span> <span class="nn">frds.data.wrds.comp</span> <span class="kn">import</span> <span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span>
 
 
+<span class="k">def</span> <span class="nf">book_leverage</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span><span id="measures.corporate.book_leverage"></span><a class="mkapi-docs-link" title="measures.corporate.book_leverage" href="../../measures.corporate/#measures.corporate.book_leverage">DOCS</a>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Book leverage</span>
+
+<span class="sd">    The book leverage is defined as the amount of debts scaled by the firm&#39;s total debts plus common equity.</span>
+
+<span class="sd">    $$</span>
+<span class="sd">    \text{Book Leverage}_{i,t} = \frac{DLTT_{i,t}+DLC_{i,t}}{DLTT_{i,t}+DLC_{i,t}+CEQ_{i,t}}</span>
+<span class="sd">    $$</span>
+
+<span class="sd">    where $DLTT$ is the long-term debt, $DLC$ is the debt in current liabilities, and $CEQ$ is the common equity, all from Compustat Fundamentals Annual `WRDS.COMP.FUNDA`.</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        If $CEQ$ is missing, the book leverage is treated as missing.</span>
+
+<span class="sd">    If `data` is a Fundamentals Quarterly dataset:</span>
+
+<span class="sd">    $$</span>
+<span class="sd">    \text{Book Leverage}_{i,t} = \frac{DLTTQ_{i,t}+DLCQ_{i,t}}{DLTTQ_{i,t}+DLCQ_{i,t}+CEQQ_{i,t}}</span>
+<span class="sd">    $$</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (Union[Funda, Fundq]): Input dataset</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Union[pd.Series, None]: Book leverage</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">leverage</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Funda</span><span class="p">):</span>
+        <span class="n">leverage</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">DLTT</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">DLC</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">DLTT</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">DLC</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">CEQ</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">):</span>
+        <span class="n">leverage</span> <span class="o">=</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">DLTTQ</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">DLCQ</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">DLTTQ</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">DLCQ</span> <span class="o">+</span> <span class="n">data</span><span class="o">.</span><span class="n">CEQQ</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">leverage</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Leverage&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">leverage</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+
+
 <span class="k">def</span> <span class="nf">roa</span><span class="p">(</span><span id="measures.corporate.roa"></span><a class="mkapi-docs-link" title="measures.corporate.roa" href="../../measures.corporate/#measures.corporate.roa">DOCS</a>
     <span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">],</span> <span class="n">use_lagged_total_asset</span><span class="o">=</span><span class="kc">False</span>
 <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Income before extraordinary items scaled by total assets</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;ROA</span>
+
+<span class="sd">    Income before extraordinary items scaled by total assets</span>
 
 <span class="sd">    $$</span>
 <span class="sd">    ROA_{i,t} = \frac{IB_{i,t}}{AT_{i,t}}</span>
@@ -430,7 +466,9 @@
 
 
 <span class="k">def</span> <span class="nf">roe</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">],</span> <span class="n">use_lagged_ceq</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span><span id="measures.corporate.roe"></span><a class="mkapi-docs-link" title="measures.corporate.roe" href="../../measures.corporate/#measures.corporate.roe">DOCS</a>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Income before extraordinary items scaled by common equity</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;ROE</span>
+
+<span class="sd">    Income before extraordinary items scaled by common equity</span>
 
 <span class="sd">    $$</span>
 <span class="sd">    ROE_{i,t} = \frac{IB_{i,t}}{CEQ_{i,t}}</span>
@@ -489,7 +527,9 @@
 
 
 <span class="k">def</span> <span class="nf">tangibility</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span><span id="measures.corporate.tangibility"></span><a class="mkapi-docs-link" title="measures.corporate.tangibility" href="../../measures.corporate/#measures.corporate.tangibility">DOCS</a>
-    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Property, plant and equipment (net) scaled by total assets</span>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Asset tangibility</span>
+
+<span class="sd">    Property, plant and equipment (net) scaled by total assets</span>
 
 <span class="sd">    $$</span>
 <span class="sd">    \text{Tangibility}_{i,t} = \frac{PPENT_{i,t}}{AT_{i,t}}</span>
@@ -545,7 +585,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2021</span>
       
     
   </small>

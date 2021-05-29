@@ -336,6 +336,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#measurescorporatebook_leverage" class="md-nav__link">
+    book_leverage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measurescorporateroa" class="md-nav__link">
     roa
   </a>
@@ -402,6 +409,13 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#measurescorporatebook_leverage" class="md-nav__link">
+    book_leverage
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measurescorporateroa" class="md-nav__link">
     roa
   </a>
@@ -458,20 +472,85 @@
           <span class="mkapi-section-name-body functions">Functions</span> 
         </div>
       <div class="mkapi-section-body functions"><ul class="mkapi-items">
+<li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.book_leverage">book_leverage</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(Union[pd.Series, None])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Book leverage<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.book_leverage" title="Source for measures.corporate.book_leverage">&lt;/&gt;</a></span></li>
+
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.roa">roa</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code>, <code class="mkapi-object-signature">use_lagged_total_asset</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Income before extraordinary items scaled by total assets<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.roa" title="Source for measures.corporate.roa">&lt;/&gt;</a></span></li>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">ROA<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.roa" title="Source for measures.corporate.roa">&lt;/&gt;</a></span></li>
 
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.roe">roe</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code>, <code class="mkapi-object-signature">use_lagged_ceq</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Income before extraordinary items scaled by common equity<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.roe" title="Source for measures.corporate.roe">&lt;/&gt;</a></span></li>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">ROE<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.roe" title="Source for measures.corporate.roe">&lt;/&gt;</a></span></li>
 
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.tangibility">tangibility</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Property, plant and equipment (net) scaled by total assets<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.tangibility" title="Source for measures.corporate.tangibility">&lt;/&gt;</a></span></li>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Asset tangibility<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.tangibility" title="Source for measures.corporate.tangibility">&lt;/&gt;</a></span></li>
 
 
 </ul></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="measures.corporate.book_leverage">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <h2 id="measurescorporatebook_leverage" class="mkapi-object-body function top"><code class="mkapi-object-prefix">measures.corporate.</code><code class="mkapi-object-name">book_leverage</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code></h2>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.book_leverage" title="Source for measures.corporate.book_leverage">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Book leverage</p>
+<p>The book leverage is defined as the amount of debts scaled by the firm's total debts plus common equity.</p>
+<div>
+<div class="MathJax_Preview">
+\text{Book Leverage}_{i,t} = \frac{DLTT_{i,t}+DLC_{i,t}}{DLTT_{i,t}+DLC_{i,t}+CEQ_{i,t}}
+</div>
+<script type="math/tex; mode=display">
+\text{Book Leverage}_{i,t} = \frac{DLTT_{i,t}+DLC_{i,t}}{DLTT_{i,t}+DLC_{i,t}+CEQ_{i,t}}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">DLTT</span><script type="math/tex">DLTT</script></span> is the long-term debt, <span><span class="MathJax_Preview">DLC</span><script type="math/tex">DLC</script></span> is the debt in current liabilities, and <span><span class="MathJax_Preview">CEQ</span><script type="math/tex">CEQ</script></span> is the common equity, all from Compustat Fundamentals Annual <code>WRDS.COMP.FUNDA</code>.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <span><span class="MathJax_Preview">CEQ</span><script type="math/tex">CEQ</script></span> is missing, the book leverage is treated as missing.</p>
+</div></div>
+    </div>
+  <div class="mkapi-section">
+      <div class="mkapi-section-body"><p>If <code>data</code> is a Fundamentals Quarterly dataset:</p>
+<div>
+<div class="MathJax_Preview">
+\text{Book Leverage}_{i,t} = \frac{DLTTQ_{i,t}+DLCQ_{i,t}}{DLTTQ_{i,t}+DLCQ_{i,t}+CEQQ_{i,t}}
+</div>
+<script type="math/tex; mode=display">
+\text{Book Leverage}_{i,t} = \frac{DLTTQ_{i,t}+DLCQ_{i,t}}{DLTTQ_{i,t}+DLCQ_{i,t}+CEQQ_{i,t}}
+</script>
+</div></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">data</code>
+<span class="mkapi-item-type">(Union[Funda, Fundq])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Input dataset</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(Union[pd.Series, None])</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>Book leverage</p></div>
     </div>
   </div>
 
@@ -489,7 +568,8 @@
 </div>
 <div class="mkapi-docstring">
 <div class="mkapi-section">
-      <div class="mkapi-section-body"><p>Income before extraordinary items scaled by total assets</p>
+      <div class="mkapi-section-body"><p>ROA</p>
+<p>Income before extraordinary items scaled by total assets</p>
 <div>
 <div class="MathJax_Preview">
 ROA_{i,t} = \frac{IB_{i,t}}{AT_{i,t}}
@@ -571,7 +651,8 @@ ROA_{i,t} = \frac{IBQ_{i,t}}{ATQ_{i,t}}
 </div>
 <div class="mkapi-docstring">
 <div class="mkapi-section">
-      <div class="mkapi-section-body"><p>Income before extraordinary items scaled by common equity</p>
+      <div class="mkapi-section-body"><p>ROE</p>
+<p>Income before extraordinary items scaled by common equity</p>
 <div>
 <div class="MathJax_Preview">
 ROE_{i,t} = \frac{IB_{i,t}}{CEQ_{i,t}}
@@ -653,7 +734,8 @@ ROE_{i,t} = \frac{IBQ_{i,t}}{CEQQ_{i,t}}
 </div>
 <div class="mkapi-docstring">
 <div class="mkapi-section">
-      <div class="mkapi-section-body"><p>Property, plant and equipment (net) scaled by total assets</p>
+      <div class="mkapi-section-body"><p>Asset tangibility</p>
+<p>Property, plant and equipment (net) scaled by total assets</p>
 <div>
 <div class="MathJax_Preview">
 \text{Tangibility}_{i,t} = \frac{PPENT_{i,t}}{AT_{i,t}}
@@ -726,7 +808,7 @@ ROE_{i,t} = \frac{IBQ_{i,t}}{CEQQ_{i,t}}
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 27, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2021</span>
       
     
   </small>
