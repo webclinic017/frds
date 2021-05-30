@@ -16,7 +16,7 @@
         <link rel="canonical" href="https://frds.io/api/measures.corporate/">
       
       <link rel="icon" href="../../images/frds_icon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.5">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.1.6">
     
     
       
@@ -24,10 +24,10 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.bde7dde4.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.875de78c.min.css">
       
         
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.ef6f36e2.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.f1a3b89f.min.css">
         
           
           
@@ -343,6 +343,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#measurescorporatemarket_to_book" class="md-nav__link">
+    market_to_book
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measurescorporateroa" class="md-nav__link">
     roa
   </a>
@@ -416,6 +423,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#measurescorporatemarket_to_book" class="md-nav__link">
+    market_to_book
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measurescorporateroa" class="md-nav__link">
     roa
   </a>
@@ -475,6 +489,10 @@
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.book_leverage">book_leverage</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
 <span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Book leverage<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.book_leverage" title="Source for measures.corporate.book_leverage">&lt;/&gt;</a></span></li>
+
+<li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.market_to_book">market_to_book</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(Union[pd.Series, None])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Market-to-Book ratio<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.market_to_book" title="Source for measures.corporate.market_to_book">&lt;/&gt;</a></span></li>
 
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.roa">roa</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code>, <code class="mkapi-object-signature">use_lagged_total_asset</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
@@ -551,6 +569,61 @@
           <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(Union[pd.Series, None])</span>
         </div>
       <div class="mkapi-section-body returns"><p>Book leverage</p></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="measures.corporate.market_to_book">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <h2 id="measurescorporatemarket_to_book" class="mkapi-object-body function top"><code class="mkapi-object-prefix">measures.corporate.</code><code class="mkapi-object-name">market_to_book</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code></h2>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.market_to_book" title="Source for measures.corporate.market_to_book">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Market-to-Book ratio</p>
+<p>Market value of common equity scaled by the book value common equity.</p>
+<div>
+<div class="MathJax_Preview">
+\text{MTB}_{i,t} = \frac{PRCC\_F_{i,t}\times CSHO_{i,t}}{CEQ_{i,t}}
+</div>
+<script type="math/tex; mode=display">
+\text{MTB}_{i,t} = \frac{PRCC\_F_{i,t}\times CSHO_{i,t}}{CEQ_{i,t}}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">PRCC\_F</span><script type="math/tex">PRCC\_F</script></span> is the share price at fiscal year end, <span><span class="MathJax_Preview">CSHO</span><script type="math/tex">CSHO</script></span> is the common shares outstanding, and <span><span class="MathJax_Preview">CEQ</span><script type="math/tex">CEQ</script></span> is common equity, all from Compustat Fundamentals Annual <code>WRDS.COMP.FUNDA</code>.</p>
+<p>If <code>data</code> is a Fundamentals Quarterly dataset:</p>
+<div>
+<div class="MathJax_Preview">
+\text{MTB}_{i,t} = \frac{PRCCQ_{i,t}\times CSHOQ_{i,t}}{CEQQ_{i,t}}
+</div>
+<script type="math/tex; mode=display">
+\text{MTB}_{i,t} = \frac{PRCCQ_{i,t}\times CSHOQ_{i,t}}{CEQQ_{i,t}}
+</script>
+</div></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">data</code>
+<span class="mkapi-item-type">(Union[Funda, Fundq])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Input dataset</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(Union[pd.Series, None])</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>Market-to-Book ratio</p></div>
     </div>
   </div>
 
@@ -808,7 +881,7 @@ ROE_{i,t} = \frac{IBQ_{i,t}}{CEQQ_{i,t}}
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 29, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2021</span>
       
     
   </small>
@@ -876,7 +949,7 @@ ROE_{i,t} = \frac{IBQ_{i,t}}{CEQQ_{i,t}}
     <script id="__config" type="application/json">{"base": "../..", "features": ["tabs"], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}, "search": "../../assets/javascripts/workers/search.d351de03.min.js", "version": null}</script>
     
     
-      <script src="../../assets/javascripts/bundle.a1609d9a.min.js"></script>
+      <script src="../../assets/javascripts/bundle.34eae1b6.min.js"></script>
       
         <script src="../../js/mkapi.js"></script>
       
