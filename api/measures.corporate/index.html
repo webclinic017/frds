@@ -364,6 +364,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#measurescorporatefirm_size" class="md-nav__link">
+    firm_size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measurescorporatetangibility" class="md-nav__link">
     tangibility
   </a>
@@ -444,6 +451,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#measurescorporatefirm_size" class="md-nav__link">
+    firm_size
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measurescorporatetangibility" class="md-nav__link">
     tangibility
   </a>
@@ -489,6 +503,10 @@
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.book_leverage">book_leverage</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
 <span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Book leverage<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.book_leverage" title="Source for measures.corporate.book_leverage">&lt;/&gt;</a></span></li>
+
+<li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.firm_size">firm_size</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(Union[pd.Series, None])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Firm size<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.firm_size" title="Source for measures.corporate.firm_size">&lt;/&gt;</a></span></li>
 
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.market_to_book">market_to_book</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
@@ -795,6 +813,65 @@ ROE_{i,t} = \frac{IBQ_{i,t}}{CEQQ_{i,t}}
 
 </div>
 
+<div class="mkapi-node" id="measures.corporate.firm_size">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <h2 id="measurescorporatefirm_size" class="mkapi-object-body function top"><code class="mkapi-object-prefix">measures.corporate.</code><code class="mkapi-object-name">firm_size</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code></h2>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.firm_size" title="Source for measures.corporate.firm_size">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Firm size</p>
+<p>The natural logarithm of total assets.</p>
+<div>
+<div class="MathJax_Preview">
+\text{Size}_{i,t} = \ln \left( AT_{i,t} \right)
+</div>
+<script type="math/tex; mode=display">
+\text{Size}_{i,t} = \ln \left( AT_{i,t} \right)
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">AT</span><script type="math/tex">AT</script></span> is from Compustat Fundamentals Annual <code>WRDS.COMP.FUNDA</code>.</p>
+<p>If <code>data</code> is a Fundamentals Quarterly dataset:</p>
+<div>
+<div class="MathJax_Preview">
+\text{Size}_{i,t} = \ln \left( ATQ_{i,t} \right)
+</div>
+<script type="math/tex; mode=display">
+\text{Size}_{i,t} = \ln \left( ATQ_{i,t} \right)
+</script>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>If <span><span class="MathJax_Preview">AT</span><script type="math/tex">AT</script></span> or <span><span class="MathJax_Preview">ATQ</span><script type="math/tex">ATQ</script></span> is missing or negative, <span><span class="MathJax_Preview">\text{Size}</span><script type="math/tex">\text{Size}</script></span> is set to missing (<code>np.nan</code>).</p>
+</div></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">data</code>
+<span class="mkapi-item-type">(Union[Funda, Fundq])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Input dataset</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(Union[pd.Series, None])</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>Firm size</p></div>
+    </div>
+  </div>
+
+</div>
+
 <div class="mkapi-node" id="measures.corporate.tangibility">
 <div class='mkapi-object-container'>
   <div class="mkapi-object function code top">
@@ -881,7 +958,7 @@ ROE_{i,t} = \frac{IBQ_{i,t}}{CEQQ_{i,t}}
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2021</span>
       
     
   </small>

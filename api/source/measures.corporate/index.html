@@ -364,6 +364,7 @@
 
 <div class="mkapi-code">
 <div class="codehilite"><pre><span></span><code><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Union</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="kn">from</span> <span class="nn">frds.data.wrds.comp</span> <span class="kn">import</span> <span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span>
 
@@ -557,6 +558,45 @@
     <span class="k">return</span> <span class="n">roe</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;ROE&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">roe</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
 
 
+<span class="k">def</span> <span class="nf">firm_size</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span><span id="measures.corporate.firm_size"></span><a class="mkapi-docs-link" title="measures.corporate.firm_size" href="../../measures.corporate/#measures.corporate.firm_size">DOCS</a>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Firm size</span>
+
+<span class="sd">    The natural logarithm of total assets.</span>
+
+<span class="sd">    $$</span>
+<span class="sd">    \text{Size}_{i,t} = \ln \left( AT_{i,t} \right)</span>
+<span class="sd">    $$</span>
+
+<span class="sd">    where $AT$ is from Compustat Fundamentals Annual `WRDS.COMP.FUNDA`.</span>
+
+<span class="sd">    If `data` is a Fundamentals Quarterly dataset:</span>
+
+<span class="sd">    $$</span>
+<span class="sd">    \text{Size}_{i,t} = \ln \left( ATQ_{i,t} \right)</span>
+<span class="sd">    $$</span>
+
+<span class="sd">    Note:</span>
+<span class="sd">        If $AT$ or $ATQ$ is missing or negative, $\text{Size}$ is set to missing (`np.nan`).</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (Union[Funda, Fundq]): Input dataset</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Union[pd.Series, None]: Firm size</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="kc">None</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Funda</span><span class="p">):</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">AT</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">AT</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">size</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">AT</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">AT</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">):</span>
+        <span class="n">size</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ATQ</span><span class="p">,</span> <span class="n">where</span><span class="o">=</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ATQ</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">))</span>
+        <span class="n">size</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">isnan</span><span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ATQ</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">data</span><span class="o">.</span><span class="n">ATQ</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">)]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span>
+
+    <span class="k">return</span> <span class="n">size</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Firm_Size&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">size</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+
+
 <span class="k">def</span> <span class="nf">tangibility</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span><span id="measures.corporate.tangibility"></span><a class="mkapi-docs-link" title="measures.corporate.tangibility" href="../../measures.corporate/#measures.corporate.tangibility">DOCS</a>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Asset tangibility</span>
 
@@ -616,7 +656,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 30, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 31, 2021</span>
       
     
   </small>
