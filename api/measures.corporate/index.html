@@ -343,6 +343,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#measurescorporatecapital_expenditure" class="md-nav__link">
+    capital_expenditure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measurescorporatemarket_to_book" class="md-nav__link">
     market_to_book
   </a>
@@ -430,6 +437,13 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#measurescorporatecapital_expenditure" class="md-nav__link">
+    capital_expenditure
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#measurescorporatemarket_to_book" class="md-nav__link">
     market_to_book
   </a>
@@ -503,6 +517,10 @@
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.book_leverage">book_leverage</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
 <span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Book leverage<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.book_leverage" title="Source for measures.corporate.book_leverage">&lt;/&gt;</a></span></li>
+
+<li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.capital_expenditure">capital_expenditure</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(Union[pd.Series, None])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Capital expenditure<a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.capital_expenditure" title="Source for measures.corporate.capital_expenditure">&lt;/&gt;</a></span></li>
 
 <li class="function"><code class="mkapi-item-name"><a href="#measures.corporate.firm_size">firm_size</a></code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
@@ -587,6 +605,52 @@
           <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(Union[pd.Series, None])</span>
         </div>
       <div class="mkapi-section-body returns"><p>Book leverage</p></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="measures.corporate.capital_expenditure">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <h2 id="measurescorporatecapital_expenditure" class="mkapi-object-body function top"><code class="mkapi-object-prefix">measures.corporate.</code><code class="mkapi-object-name">capital_expenditure</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code></h2>
+  </div>
+  <div class="mkapi-src-link">
+    <a class="mkapi-src-link" href="../source/measures.corporate/#measures.corporate.capital_expenditure" title="Source for measures.corporate.capital_expenditure">&lt;/&gt;</a>
+  </div>
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Capital expenditure</p>
+<p>The capital expenditures scaled by total assets.</p>
+<div>
+<div class="MathJax_Preview">
+\text{Capital Expenditure}_{i,t} = \frac{CAPX_{i,t}}{AT_{i,t}}
+</div>
+<script type="math/tex; mode=display">
+\text{Capital Expenditure}_{i,t} = \frac{CAPX_{i,t}}{AT_{i,t}}
+</script>
+</div>
+<p>where <span><span class="MathJax_Preview">CAPX</span><script type="math/tex">CAPX</script></span> and <span><span class="MathJax_Preview">AT</span><script type="math/tex">AT</script></span> are from Compustat Fundamentals Annual <code>WRDS.COMP.FUNDA</code>.</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">data</code>
+<span class="mkapi-item-type">(Union[Funda])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Input dataset</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(Union[pd.Series, None])</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>Capital expenditure</p></div>
     </div>
   </div>
 

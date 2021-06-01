@@ -403,6 +403,29 @@
     <span class="k">return</span> <span class="n">leverage</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Leverage&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">leverage</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
 
 
+<span class="k">def</span> <span class="nf">capital_expenditure</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Funda</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span><span id="measures.corporate.capital_expenditure"></span><a class="mkapi-docs-link" title="measures.corporate.capital_expenditure" href="../../measures.corporate/#measures.corporate.capital_expenditure">DOCS</a>
+    <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Capital expenditure</span>
+
+<span class="sd">    The capital expenditures scaled by total assets.</span>
+
+<span class="sd">    $$</span>
+<span class="sd">    \text{Capital Expenditure}_{i,t} = \frac{CAPX_{i,t}}{AT_{i,t}}</span>
+<span class="sd">    $$</span>
+
+<span class="sd">    where $CAPX$ and $AT$ are from Compustat Fundamentals Annual `WRDS.COMP.FUNDA`.</span>
+
+<span class="sd">    Args:</span>
+<span class="sd">        data (Union[Funda]): Input dataset</span>
+
+<span class="sd">    Returns:</span>
+<span class="sd">        Union[pd.Series, None]: Capital expenditure</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="n">capx</span> <span class="o">=</span> <span class="kc">None</span>
+    <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">Funda</span><span class="p">):</span>
+        <span class="n">capx</span> <span class="o">=</span> <span class="n">data</span><span class="o">.</span><span class="n">CAPX</span> <span class="o">/</span> <span class="n">data</span><span class="o">.</span><span class="n">AT</span>
+    <span class="k">return</span> <span class="n">capx</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span><span class="s2">&quot;Capital_Expenditure&quot;</span><span class="p">)</span> <span class="k">if</span> <span class="n">capx</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="k">else</span> <span class="kc">None</span>
+
+
 <span class="k">def</span> <span class="nf">market_to_book</span><span class="p">(</span><span class="n">data</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">Funda</span><span class="p">,</span> <span class="n">Fundq</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">,</span> <span class="kc">None</span><span class="p">]:</span><span id="measures.corporate.market_to_book"></span><a class="mkapi-docs-link" title="measures.corporate.market_to_book" href="../../measures.corporate/#measures.corporate.market_to_book">DOCS</a>
     <span class="sa">r</span><span class="sd">&quot;&quot;&quot;Market-to-Book ratio</span>
 
