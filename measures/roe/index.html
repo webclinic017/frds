@@ -243,42 +243,23 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
-        API
+        Measures
         <span class="md-nav__icon md-icon"></span>
       </label>
-      <nav class="md-nav" aria-label="API" data-md-level="1">
+      <nav class="md-nav" aria-label="Measures" data-md-level="1">
         <label class="md-nav__title" for="__nav_3">
           <span class="md-nav__icon md-icon"></span>
-          API
-        </label>
-        <ul class="md-nav__list" data-md-scrollfix>
-          
-            
-  
-  
-  
-    
-    <li class="md-nav__item md-nav__item--nested">
-      
-      
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" >
-      
-      <label class="md-nav__link" for="__nav_3_1">
-        measures
-        <span class="md-nav__icon md-icon"></span>
-      </label>
-      <nav class="md-nav" aria-label="measures" data-md-level="2">
-        <label class="md-nav__title" for="__nav_3_1">
-          <span class="md-nav__icon md-icon"></span>
-          measures
+          Measures
         </label>
         <ul class="md-nav__list" data-md-scrollfix>
           
@@ -287,8 +268,43 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/measures/" class="md-nav__link">
-        measures
+      <a href="../" class="md-nav__link">
+        Measures
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      <label class="md-nav__link" for="__nav_3_2">
+        Corporate
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Corporate" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          Corporate
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../book_leverage/" class="md-nav__link">
+        Book leverage
       </a>
     </li>
   
@@ -299,8 +315,78 @@
   
   
     <li class="md-nav__item">
-      <a href="../../api/measures.corporate/" class="md-nav__link">
-        measures.corporate
+      <a href="../capital_expenditure/" class="md-nav__link">
+        Capital expenditure
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../firm_size/" class="md-nav__link">
+        Firm size
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../market_to_book/" class="md-nav__link">
+        Market-to-book ratio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../roa/" class="md-nav__link">
+        ROA
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        ROE
+      </a>
+      
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../tangibility/" class="md-nav__link">
+        Tangibility
       </a>
     </li>
   
@@ -337,21 +423,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -371,8 +442,18 @@
                 
                 
                 <h1 id="roe">ROE<a class="headerlink" href="#roe" title="Permanent link">&para;</a></h1>
-<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
-<p>Income Before Extraordinary Items scaled by Common Equity (Total).</p>
+<div class="mkapi-node" id="frds.measures.corporate.roe">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <div class="mkapi-object-body function top"><code class="mkapi-object-prefix">frds.measures.corporate.</code><code class="mkapi-object-name">roe</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code>, <code class="mkapi-object-signature">use_lagged_ceq=False</code><code class="mkapi-object-parenthesis">)</code></div>
+  </div>
+  
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>ROE</p>
+<p>Income before extraordinary items scaled by common equity</p>
 <div>
 <div class="MathJax_Preview">
 ROE_{i,t} = \frac{IB_{i,t}}{CEQ_{i,t}}
@@ -382,6 +463,73 @@ ROE_{i,t} = \frac{IB_{i,t}}{CEQ_{i,t}}
 </script>
 </div>
 <p>where <span><span class="MathJax_Preview">IB</span><script type="math/tex">IB</script></span> and <span><span class="MathJax_Preview">CEQ</span><script type="math/tex">CEQ</script></span> are from Compustat Fundamentals Annual <code>WRDS.COMP.FUNDA</code>.</p>
+<p>If <code>data</code> is a Fundamentals Quarterly dataset:</p>
+<div>
+<div class="MathJax_Preview">
+ROE_{i,t} = \frac{IBQ_{i,t}}{CEQQ_{i,t}}
+</div>
+<script type="math/tex; mode=display">
+ROE_{i,t} = \frac{IBQ_{i,t}}{CEQQ_{i,t}}
+</script>
+</div></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">data</code>
+<span class="mkapi-item-type">(Union[Funda, Fundq])</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Input dataset</span></li>
+
+<li><code class="mkapi-item-name">use_lagged_ceq</code>
+<span class="mkapi-item-type">(bool, optional)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Use lagged common equity. Defaults to False.</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(Union[pd.Series, None])</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>ROE</p></div>
+    </div>
+  <div class="mkapi-section examples">
+      <div class="mkapi-section-name examples">
+          <span class="mkapi-section-name-body examples">Examples</span> 
+        </div>
+      <div class="mkapi-section-body examples"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">frds.data.wrds.comp</span> <span class="kn">import</span> <span class="n">Funda</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">frds.io.wrds</span> <span class="kn">import</span> <span class="n">load</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">frds.measures.corporate</span> <span class="kn">import</span> <span class="n">roe</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">FUNDA</span> <span class="o">=</span> <span class="n">load</span><span class="p">(</span><span class="n">Funda</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">roe</span><span class="p">(</span><span class="n">FUNDA</span><span class="p">)</span>
+<span class="n">GVKEY</span>   <span class="n">DATADATE</span>
+<span class="mi">001000</span>  <span class="mi">1961</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">31</span>         <span class="n">NaN</span>
+        <span class="mi">1962</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">31</span>    <span class="mf">0.217391</span>
+        <span class="mi">1963</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">31</span>    <span class="mf">0.005425</span>
+        <span class="mi">1964</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">31</span>    <span class="mf">0.064250</span>
+        <span class="mi">1965</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">31</span>   <span class="o">-</span><span class="mf">0.401222</span>
+                        <span class="o">...</span>
+<span class="mi">001004</span>  <span class="mi">1982</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">31</span>    <span class="mf">0.028876</span>
+        <span class="mi">1983</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">31</span>    <span class="mf">0.064662</span>
+        <span class="mi">1984</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">31</span>    <span class="mf">0.055337</span>
+        <span class="mi">1985</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">31</span>    <span class="mf">0.103805</span>
+        <span class="mi">1986</span><span class="o">-</span><span class="mi">05</span><span class="o">-</span><span class="mi">31</span>    <span class="mf">0.120632</span>
+<span class="n">Name</span><span class="p">:</span> <span class="n">ROE</span><span class="p">,</span> <span class="n">Length</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span> <span class="n">dtype</span><span class="p">:</span> <span class="n">float64</span>
+</code></pre></div></div>
+    </div>
+  <div class="mkapi-section see-also">
+      <div class="mkapi-section-name see-also">
+          <span class="mkapi-section-name-body see-also">See Also</span> 
+        </div>
+      <div class="mkapi-section-body see-also"><ul>
+<li><a href="/measures/roa">ROA</a> - Return on assets</li>
+</ul></div>
+    </div>
+  </div>
+
+</div>
                 
                   
                     
@@ -390,7 +538,7 @@ ROE_{i,t} = \frac{IB_{i,t}}{CEQ_{i,t}}
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 27, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2021</span>
       
     
   </small>
@@ -412,6 +560,39 @@ ROE_{i,t} = \frac{IB_{i,t}}{CEQ_{i,t}}
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        <a href="../roa/" class="md-footer__link md-footer__link--prev" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              ROA
+            </div>
+          </div>
+        </a>
+      
+      
+        <a href="../tangibility/" class="md-footer__link md-footer__link--next" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Tangibility
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

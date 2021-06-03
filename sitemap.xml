@@ -1,19 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://frds.io/</loc>
-     <lastmod>2021-06-01</lastmod>
+     <lastmod>2021-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://frds.io/getting-started/</loc>
-     <lastmod>2021-06-01</lastmod>
+     <lastmod>2021-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://frds.io/api/measures/</loc>
-     <lastmod>2021-06-01</lastmod>
+     <loc>https://frds.io/measures/</loc>
+     <lastmod>2021-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
-     <loc>https://frds.io/api/measures.corporate/</loc>
-     <lastmod>2021-06-01</lastmod>
+     <loc>https://frds.io/measures/book_leverage/</loc>
+     <lastmod>2021-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://frds.io/measures/capital_expenditure/</loc>
+     <lastmod>2021-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://frds.io/measures/firm_size/</loc>
+     <lastmod>2021-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://frds.io/measures/market_to_book/</loc>
+     <lastmod>2021-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://frds.io/measures/roa/</loc>
+     <lastmod>2021-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://frds.io/measures/roe/</loc>
+     <lastmod>2021-06-03</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://frds.io/measures/tangibility/</loc>
+     <lastmod>2021-06-03</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
