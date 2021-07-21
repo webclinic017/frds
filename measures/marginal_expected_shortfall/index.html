@@ -13,14 +13,14 @@
         <meta name="author" content="Mingze Gao">
       
       
-        <link rel="canonical" href="https://frds.io/measures/bhc_maturity_gap/">
+        <link rel="canonical" href="https://frds.io/measures/marginal_expected_shortfall/">
       
       <link rel="icon" href="../../images/frds_icon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.1.11">
     
     
       
-        <title>BHC Maturity Gap - Financial Research Data Services</title>
+        <title>Marginal expected shortfall - Financial Research Data Services</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#bhc-maturity-gap" class="md-skip">
+        <a href="#marginal-expected-shortfall-mes" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              BHC Maturity Gap
+              Marginal expected shortfall
             
           </span>
         </div>
@@ -211,13 +211,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link">
+      <a href="../" class="md-tabs__link md-tabs__link--active">
         Measures
       </a>
     </li>
@@ -303,12 +305,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Measures
@@ -447,12 +451,14 @@
             
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
       
       <label class="md-nav__link" for="__nav_3_3">
         Banking
@@ -480,11 +486,21 @@
             
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../marginal_expected_shortfall/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Marginal expected shortfall
       </a>
+      
     </li>
   
 
@@ -532,48 +548,6 @@
     
   
   
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#definition" class="md-nav__link">
-    Definition
-  </a>
-  
-    <nav class="md-nav" aria-label="Definition">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#maturity-gap" class="md-nav__link">
-    Maturity Gap
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#narrow-maturity-gap" class="md-nav__link">
-    Narrow Maturity Gap
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#reference" class="md-nav__link">
-    Reference
-  </a>
-  
-</li>
-      
-    </ul>
-  
 </nav>
                   </div>
                 </div>
@@ -587,26 +561,60 @@
 
 
                 
-                  <a href="https://github.com/mgao6767/frds/edit/master/docs/measures/bhc_maturity_gap.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mgao6767/frds/edit/master/docs/measures/marginal_expected_shortfall.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="bhc-maturity-gap">BHC Maturity Gap<a class="headerlink" href="#bhc-maturity-gap" title="Permanent link">&para;</a></h1>
-<h2 id="definition">Definition<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
-<h3 id="maturity-gap">Maturity Gap<a class="headerlink" href="#maturity-gap" title="Permanent link">&para;</a></h3>
-<p>Earning assets that are repriceable or mature within one year <code>BHCK3197</code> minus interest-bearing deposits that mature or reprice within one year <code>BHCK3296</code> minus long-term debt that reprices or matures within one year <code>BHCK3298 + BHCK3409</code> minus variable rate preferred stock <code>BHCK3408</code> minus other borrowed money with a maturity of one year or less <code>BHCK2332</code> minus commercial paper <code>BHCK2309</code> minus federal funds and repo liabilities <code>BHDMB993 + BHCKB995</code>, normalized by total assets <code>BHCK2170</code>, where all variables are from the Bank Holding Company data by the Federal Reserve Bank of Chicago.<sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup> </p>
-<h3 id="narrow-maturity-gap">Narrow Maturity Gap<a class="headerlink" href="#narrow-maturity-gap" title="Permanent link">&para;</a></h3>
-<p>Narrow maturity gap is defined similarly to Maturity Gap, except that it does not subtract interest-bearing deposits that mature or reprice within one year <code>BHCK3296</code>.</p>
-<h2 id="reference">Reference<a class="headerlink" href="#reference" title="Permanent link">&para;</a></h2>
-<p><a href="https://doi.org/10.1111/jofi.12868">Rampini, Viswanathan and Vuillemey (2020 JF)</a>.</p>
-<div class="footnote">
-<hr />
+                <h1 id="marginal-expected-shortfall-mes">Marginal Expected Shortfall (MES)<a class="headerlink" href="#marginal-expected-shortfall-mes" title="Permanent link">&para;</a></h1>
+<div class="mkapi-node" id="frds.measures.bank.marginal_expected_shortfall">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object function code top">
+    <div class="mkapi-object-kind function top">function</div>
+    <div class="mkapi-object-body function top"><code class="mkapi-object-prefix">frds.measures.bank.</code><code class="mkapi-object-name">marginal_expected_shortfall</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">firm_returns</code>, <code class="mkapi-object-signature">market_returns</code>, <code class="mkapi-object-signature">q=0.05</code><code class="mkapi-object-parenthesis">)</code></div>
+  </div>
+  
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section">
+      <div class="mkapi-section-body"><p>Marginal Expected Shortfall (MES).</p>
+<p>Acharya, Pedersen, Philippon, and Richardson (2010) argue that each financial institutions contribution to     systemic risk can be measured as its systemic expected shortfall (SES), i.e., its propensity to be undercapitalized     when the system as a whole is undercapitalized. SES is a theoretical construct and the authors use the following 3 measures to proxy it:</p>
 <ol>
-<li id="fn:1">
-<p><a href="https://www.chicagofed.org/banking/financial-institution-reports/bhc-data">https://www.chicagofed.org/banking/financial-institution-reports/bhc-data</a>.&#160;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">&#8617;</a></p>
-</li>
+<li>The outcome of stress tests performed by regulators. The SES metric of a firm here is defined as the recommended capital that         it was required to raise as a result of the stress test in February 2009.</li>
+<li>The decline in equity valuations of large financial firms during the crisis, as measured by their cumulative equity return         from July 2007 to December 2008.</li>
+<li>The widening of the credit default swap spreads of large financial firms as measured by their cumulative CDS spread increases         from July 2007 to December 2008.</li>
 </ol>
+<p>Given these proxies, the authors seek to develop leading indicators which "predict" an institutions SES;     these leading indicators are marginal expected shortfall (MES) and leverage (LVG).</p>
+<p>The description above is from Bisias, Lo, and Valavanis.</p></div>
+    </div>
+  <div class="mkapi-section parameters">
+      <div class="mkapi-section-name parameters">
+          <span class="mkapi-section-name-body parameters">Parameters</span> 
+        </div>
+      <div class="mkapi-section-body parameters"><ul class="mkapi-items">
+<li><code class="mkapi-item-name">firm_returns</code>
+<span class="mkapi-item-type">(np.ndarray)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The time series of returns (equity or CDS) for the firm.</span></li>
+
+<li><code class="mkapi-item-name">market_returns</code>
+<span class="mkapi-item-type">(np.ndarray)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The time series of returns (equity or CDS) for the market as a whole.             It is necessary to have enough data points so that there exists a value.</span></li>
+
+<li><code class="mkapi-item-name">q</code>
+<span class="mkapi-item-type">(float, optional)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The percentile. Range is [0, 1]. Deaults to 0.05.</span></li>
+
+
+</ul></div>
+    </div>
+  <div class="mkapi-section returns">
+      <div class="mkapi-section-name returns">
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(float)</span>
+        </div>
+      <div class="mkapi-section-body returns"><p>MES</p></div>
+    </div>
+  </div>
+
 </div>
                 
                   
@@ -616,7 +624,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 2, 2020</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
       
     
   </small>
@@ -638,6 +646,41 @@
       
         
 <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../absorption_ratio/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Absoprtion ratio" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Absoprtion ratio
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../systemic_expected_shortfall/" class="md-footer__link md-footer__link--next" aria-label="Next: Systemic expected shortfall" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Systemic expected shortfall
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

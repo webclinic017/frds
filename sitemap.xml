@@ -16,6 +16,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://frds.io/measures/absorption_ratio/</loc>
+         <lastmod>2021-07-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://frds.io/measures/accounting_restatement/</loc>
          <lastmod>2021-07-21</lastmod>
          <changefreq>daily</changefreq>
@@ -106,6 +111,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://frds.io/measures/marginal_expected_shortfall/</loc>
+         <lastmod>2021-07-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://frds.io/measures/market_to_book/</loc>
          <lastmod>2021-07-21</lastmod>
          <changefreq>daily</changefreq>
@@ -127,6 +137,11 @@
     </url>
     <url>
          <loc>https://frds.io/measures/stock_delisting/</loc>
+         <lastmod>2021-07-21</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://frds.io/measures/systemic_expected_shortfall/</loc>
          <lastmod>2021-07-21</lastmod>
          <changefreq>daily</changefreq>
     </url>

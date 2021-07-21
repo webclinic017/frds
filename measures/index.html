@@ -458,6 +458,69 @@
   
 
           
+            
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" >
+      
+      <label class="md-nav__link" for="__nav_3_3">
+        Banking
+        <span class="md-nav__icon md-icon"></span>
+      </label>
+      <nav class="md-nav" aria-label="Banking" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          Banking
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="absorption_ratio/" class="md-nav__link">
+        Absoprtion ratio
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="marginal_expected_shortfall/" class="md-nav__link">
+        Marginal expected shortfall
+      </a>
+    </li>
+  
+
+          
+            
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="systemic_expected_shortfall/" class="md-nav__link">
+        Systemic expected shortfall
+      </a>
+    </li>
+  
+
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+          
         </ul>
       </nav>
     </li>
@@ -543,6 +606,39 @@
 <li class="function"><code class="mkapi-item-name">tangibility</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code><code class="mkapi-object-parenthesis">)</code>
 <span class="mkapi-item-type">(Union[pd.Series, None])</span>
 <span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Asset tangibility</span></li>
+
+
+</ul></div>
+    </div>
+  </div>
+
+</div>
+
+<div class="mkapi-node" id="frds.measures.bank">
+<div class='mkapi-object-container'>
+  <div class="mkapi-object module code top">
+    <div class="mkapi-object-kind module top">module</div>
+    <div class="mkapi-object-body module top"><code class="mkapi-object-prefix">frds.measures.</code><code class="mkapi-object-name">bank</code></div>
+  </div>
+  
+</div>
+<div class="mkapi-docstring">
+<div class="mkapi-section functions">
+      <div class="mkapi-section-name functions">
+          <span class="mkapi-section-name-body functions">Functions</span> 
+        </div>
+      <div class="mkapi-section-body functions"><ul class="mkapi-items">
+<li class="function"><code class="mkapi-item-name">absorption_ratio</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">asset_returns</code>, <code class="mkapi-object-signature">fraction_eigenvectors</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(float)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Absorption Ratio</span></li>
+
+<li class="function"><code class="mkapi-item-name">marginal_expected_shortfall</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">firm_returns</code>, <code class="mkapi-object-signature">market_returns</code>, <code class="mkapi-object-signature">q</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(float)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Marginal Expected Shortfall (MES).</span></li>
+
+<li class="function"><code class="mkapi-item-name">systemic_expected_shortfall</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">mes_training_sample</code>, <code class="mkapi-object-signature">lvg_training_sample</code>, <code class="mkapi-object-signature">ses_training_sample</code>, <code class="mkapi-object-signature">mes_firm</code>, <code class="mkapi-object-signature">lvg_firm</code><code class="mkapi-object-parenthesis">)</code>
+<span class="mkapi-item-type">(float)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">Systemic Expected Shortfall (SES)</span></li>
 
 
 </ul></div>
@@ -648,7 +744,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">June 3, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
       
     
   </small>
