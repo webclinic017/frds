@@ -13,14 +13,14 @@
         <meta name="author" content="Mingze Gao">
       
       
-        <link rel="canonical" href="https://frds.io/measures/marginal_expected_shortfall/">
+        <link rel="canonical" href="https://frds.io/measures/anomaly_score/">
       
       <link rel="icon" href="../../images/frds_icon.png">
       <meta name="generator" content="mkdocs-1.2.2, mkdocs-material-7.2.0">
     
     
       
-        <title>Marginal expected shortfall - Financial Research Data Services</title>
+        <title>Anomaly Score - Financial Research Data Services</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#marginal-expected-shortfall-mes" class="md-skip">
+        <a href="#anomaly-score" class="md-skip">
           Skip to content
         </a>
       
@@ -119,7 +119,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Marginal expected shortfall
+              Anomaly Score
             
           </span>
         </div>
@@ -215,15 +215,13 @@
         
   
   
-    
-  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="../" class="md-tabs__link md-tabs__link--active">
+      <a href="../" class="md-tabs__link">
         Measures
       </a>
     </li>
@@ -309,14 +307,12 @@
 
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" data-md-state="indeterminate" type="checkbox" id="__nav_3" checked>
       
       <label class="md-nav__link" for="__nav_3">
         Measures
@@ -455,14 +451,12 @@
             
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3_3" data-md-state="indeterminate" type="checkbox" id="__nav_3_3" checked>
       
       <label class="md-nav__link" for="__nav_3_3">
         Banking
@@ -502,21 +496,11 @@
             
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../marginal_expected_shortfall/" class="md-nav__link">
         Marginal expected shortfall
       </a>
-      
     </li>
   
 
@@ -577,57 +561,106 @@
 
 
                 
-                  <a href="https://github.com/mgao6767/frds/edit/master/docs/measures/marginal_expected_shortfall.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/mgao6767/frds/edit/master/docs/measures/anomaly_score.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="marginal-expected-shortfall-mes">Marginal Expected Shortfall (MES)<a class="headerlink" href="#marginal-expected-shortfall-mes" title="Permanent link">&para;</a></h1>
-<div class="mkapi-node" id="frds.measures.bank.marginal_expected_shortfall">
+                <h1 id="anomaly-score">Anomaly Score<a class="headerlink" href="#anomaly-score" title="Permanent link">&para;</a></h1>
+<div class="mkapi-node" id="frds.measures.general.anomaly_score">
 <div class='mkapi-object-container'>
   <div class="mkapi-object function code top">
     <div class="mkapi-object-kind function top">function</div>
-    <div class="mkapi-object-body function top"><code class="mkapi-object-prefix">frds.measures.bank.</code><code class="mkapi-object-name">marginal_expected_shortfall</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">firm_returns</code>, <code class="mkapi-object-signature">market_returns</code>, <code class="mkapi-object-signature">q=0.05</code><code class="mkapi-object-parenthesis">)</code></div>
+    <div class="mkapi-object-body function top"><code class="mkapi-object-prefix">frds.measures.general.</code><code class="mkapi-object-name">anomaly_score</code><code class="mkapi-object-parenthesis">(</code><code class="mkapi-object-signature">data</code>, <code class="mkapi-object-signature">forest_size=1000</code>, <code class="mkapi-object-signature">tree_size=256</code>, <code class="mkapi-object-signature">exclude_cols=None</code>, <code class="mkapi-object-signature">random_seed=1</code>, <code class="mkapi-object-signature">name=&#39;AnomalyScore&#39;</code><code class="mkapi-object-parenthesis">)</code></div>
   </div>
   
 </div>
 <div class="mkapi-docstring">
 <div class="mkapi-section">
-      <div class="mkapi-section-body"><p>Marginal Expected Shortfall (MES).</p>
-<p>Acharya, Pedersen, Philippon, and Richardson (2010) argue that each financial institutions contribution to     systemic risk can be measured as its systemic expected shortfall (SES), i.e., its propensity to be undercapitalized     when the system as a whole is undercapitalized. SES is a theoretical construct and the authors use the following 3 measures to proxy it:</p>
-<ol>
-<li>The outcome of stress tests performed by regulators. The SES metric of a firm here is defined as the recommended capital that         it was required to raise as a result of the stress test in February 2009.</li>
-<li>The decline in equity valuations of large financial firms during the crisis, as measured by their cumulative equity return         from July 2007 to December 2008.</li>
-<li>The widening of the credit default swap spreads of large financial firms as measured by their cumulative CDS spread increases         from July 2007 to December 2008.</li>
-</ol>
-<p>Given these proxies, the authors seek to develop leading indicators which "predict" an institutions SES;     these leading indicators are marginal expected shortfall (MES) and leverage (LVG).</p>
-<p>The description above is from Bisias, Lo, and Valavanis.</p></div>
+      <div class="mkapi-section-body"><p>Calculate the anomaly socres using Isolation Forest</p></div>
     </div>
   <div class="mkapi-section parameters">
       <div class="mkapi-section-name parameters">
           <span class="mkapi-section-name-body parameters">Parameters</span> 
         </div>
       <div class="mkapi-section-body parameters"><ul class="mkapi-items">
-<li><code class="mkapi-item-name">firm_returns</code>
-<span class="mkapi-item-type">(np.ndarray)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The time series of returns (equity or CDS) for the firm.</span></li>
+<li><code class="mkapi-item-name">data</code>
+<span class="mkapi-item-type">(pd.DataFrame)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">indexed DataFrame</span></li>
 
-<li><code class="mkapi-item-name">market_returns</code>
-<span class="mkapi-item-type">(np.ndarray)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The time series of returns (equity or CDS) for the market as a whole.             It is necessary to have enough data points so that there exists a value.</span></li>
+<li><code class="mkapi-item-name">forest_size</code>
+<span class="mkapi-item-type">(int, optional)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">number of trees. Defaults to 1_000.</span></li>
 
-<li><code class="mkapi-item-name">q</code>
-<span class="mkapi-item-type">(float, optional)</span>
-<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">The percentile. Range is [0, 1]. Deaults to 0.05.</span></li>
+<li><code class="mkapi-item-name">tree_size</code>
+<span class="mkapi-item-type">(int, optional)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">number of observations per Isolation Tree. Defaults to 256.</span></li>
+
+<li><code class="mkapi-item-name">exclude_cols</code>
+<span class="mkapi-item-type">(list, optional)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">columns in the input <code>data</code> to ignore. Defaults to None.</span></li>
+
+<li><code class="mkapi-item-name">random_seed</code>
+<span class="mkapi-item-type">(int, optional)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">random seed for reproducibility. Defaults to 1.</span></li>
+
+<li><code class="mkapi-item-name">name</code>
+<span class="mkapi-item-type">(str, optional)</span>
+<span class="mkapi-item-dash">&mdash;</span> <span class="mkapi-item-description">column name of the return DataFrame. Defaults to "AnomalyScore".</span></li>
 
 
 </ul></div>
     </div>
   <div class="mkapi-section returns">
       <div class="mkapi-section-name returns">
-          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(float)</span>
+          <span class="mkapi-section-name-body returns">Returns</span> <span class="mkapi-item-type">(pd.DataFrame)</span>
         </div>
-      <div class="mkapi-section-body returns"><p>MES</p></div>
+      <div class="mkapi-section-body returns"><p>single-column indexed DataFrame</p></div>
+    </div>
+  <div class="mkapi-section examples">
+      <div class="mkapi-section-name examples">
+          <span class="mkapi-section-name-body examples">Examples</span> 
+        </div>
+      <div class="mkapi-section-body examples"><div class="highlight"><pre><span></span><code><span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="kn">from</span> <span class="nn">frds.measures.general</span> <span class="kn">import</span> <span class="n">anomaly_score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">n_obs</span><span class="p">,</span> <span class="n">n_attrs</span> <span class="o">=</span> <span class="mi">1_000</span><span class="p">,</span> <span class="mi">100</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span>
+<span class="o">...</span>     <span class="p">{</span><span class="sa">f</span><span class="s2">&quot;Attr</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="n">n_obs</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_attrs</span><span class="p">)},</span>
+<span class="o">...</span>     <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="sa">f</span><span class="s2">&quot;obs.</span><span class="si">{</span><span class="n">i</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">n_obs</span><span class="p">)],</span>
+<span class="o">...</span> <span class="p">)</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;obs.o&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="mi">10</span>  <span class="c1"># create an outlier</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+           <span class="n">Attr0</span>      <span class="n">Attr1</span>      <span class="n">Attr2</span>      <span class="n">Attr3</span>      <span class="n">Attr4</span>      <span class="n">Attr5</span>  <span class="o">...</span>     <span class="n">Attr94</span>     <span class="n">Attr95</span>     <span class="n">Attr96</span>     <span class="n">Attr97</span>     <span class="n">Attr98</span>     <span class="n">Attr99</span>
+<span class="n">obs</span><span class="mf">.0</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="o">...</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>  <span class="mf">10.000000</span>
+<span class="n">obs</span><span class="mf">.1</span>   <span class="mf">0.400157</span>   <span class="mf">0.892474</span>  <span class="o">-</span><span class="mf">1.711970</span>   <span class="mf">0.568722</span>   <span class="mf">1.843700</span>  <span class="o">-</span><span class="mf">0.737456</span>  <span class="o">...</span>  <span class="o">-</span><span class="mf">0.293003</span>   <span class="mf">1.439150</span>  <span class="o">-</span><span class="mf">1.912125</span>  <span class="o">-</span><span class="mf">0.041582</span>  <span class="o">-</span><span class="mf">0.359808</span>  <span class="o">-</span><span class="mf">0.910595</span>
+<span class="n">obs</span><span class="mf">.2</span>   <span class="mf">0.978738</span>  <span class="o">-</span><span class="mf">0.422315</span>   <span class="mf">0.046135</span>  <span class="o">-</span><span class="mf">0.114487</span>   <span class="mf">0.271091</span>  <span class="o">-</span><span class="mf">1.536920</span>  <span class="o">...</span>   <span class="mf">1.873511</span>  <span class="o">-</span><span class="mf">1.500278</span>  <span class="o">-</span><span class="mf">1.073391</span>   <span class="mf">0.462102</span>   <span class="mf">1.425187</span>   <span class="mf">0.187550</span>
+<span class="n">obs</span><span class="mf">.3</span>   <span class="mf">2.240893</span>   <span class="mf">0.104714</span>  <span class="o">-</span><span class="mf">0.958374</span>   <span class="mf">0.251630</span>   <span class="mf">1.136448</span>  <span class="o">-</span><span class="mf">0.562255</span>  <span class="o">...</span>   <span class="mf">2.274601</span>   <span class="mf">0.851165</span>   <span class="mf">0.774576</span>   <span class="mf">0.087572</span>  <span class="o">-</span><span class="mf">0.013497</span>  <span class="o">-</span><span class="mf">0.514234</span>
+<span class="n">obs</span><span class="mf">.4</span>   <span class="mf">1.867558</span>   <span class="mf">0.228053</span>  <span class="o">-</span><span class="mf">0.080812</span>  <span class="o">-</span><span class="mf">1.210856</span>  <span class="o">-</span><span class="mf">1.738332</span>  <span class="o">-</span><span class="mf">1.599511</span>  <span class="o">...</span>   <span class="mf">0.821944</span>   <span class="mf">0.512349</span>  <span class="o">-</span><span class="mf">0.263450</span>  <span class="o">-</span><span class="mf">0.583916</span>  <span class="o">-</span><span class="mf">0.972011</span>  <span class="o">-</span><span class="mf">0.527498</span>
+<span class="p">[</span><span class="mi">5</span> <span class="n">rows</span> <span class="n">x</span> <span class="mi">100</span> <span class="n">columns</span><span class="p">]</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">anomaly_score</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>     <span class="c1"># check anomaly scores</span>
+        <span class="n">AnomalyScore</span>
+<span class="n">obs</span><span class="mf">.0</span>        <span class="mf">0.681283</span>
+<span class="n">obs</span><span class="mf">.1</span>        <span class="mf">0.511212</span>
+<span class="n">obs</span><span class="mf">.2</span>        <span class="mf">0.500675</span>
+<span class="n">obs</span><span class="mf">.3</span>        <span class="mf">0.496884</span>
+<span class="n">obs</span><span class="mf">.4</span>        <span class="mf">0.505786</span>
+<span class="o">...</span>               <span class="o">...</span>
+<span class="n">obs</span><span class="mf">.995</span>      <span class="mf">0.486229</span>
+<span class="n">obs</span><span class="mf">.996</span>      <span class="mf">0.488048</span>
+<span class="n">obs</span><span class="mf">.997</span>      <span class="mf">0.479535</span>
+<span class="n">obs</span><span class="mf">.998</span>      <span class="mf">0.493547</span>
+<span class="n">obs</span><span class="mf">.999</span>      <span class="mf">0.498489</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="c1"># verify that obs.0 has the highest anomaly score</span>
+<span class="o">&gt;&gt;&gt;</span> <span class="n">anomaly_score</span><span class="p">(</span><span class="n">data</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">by</span><span class="o">=</span><span class="s2">&quot;AnomalyScore&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
+        <span class="n">AnomalyScore</span>
+<span class="n">obs</span><span class="mf">.0</span>        <span class="mf">0.681283</span>
+<span class="n">obs</span><span class="mf">.766</span>      <span class="mf">0.527717</span>
+<span class="n">obs</span><span class="mf">.911</span>      <span class="mf">0.525643</span>
+<span class="n">obs</span><span class="mf">.676</span>      <span class="mf">0.525509</span>
+<span class="n">obs</span><span class="mf">.71</span>       <span class="mf">0.525022</span>
+</code></pre></div></div>
     </div>
   </div>
 
@@ -640,7 +673,7 @@
 <div class="md-source-date">
   <small>
     
-      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 21, 2021</span>
+      Last update: <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 22, 2021</span>
       
     
   </small>
@@ -662,41 +695,6 @@
       
         
 <footer class="md-footer">
-  
-    <nav class="md-footer__inner md-grid" aria-label="Footer">
-      
-        
-        <a href="../distress_insurance_premium/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Distress insurance premium" rel="prev">
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-          </div>
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Previous
-              </span>
-              Distress insurance premium
-            </div>
-          </div>
-        </a>
-      
-      
-        
-        <a href="../systemic_expected_shortfall/" class="md-footer__link md-footer__link--next" aria-label="Next: Systemic expected shortfall" rel="next">
-          <div class="md-footer__title">
-            <div class="md-ellipsis">
-              <span class="md-footer__direction">
-                Next
-              </span>
-              Systemic expected shortfall
-            </div>
-          </div>
-          <div class="md-footer__button md-icon">
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
-          </div>
-        </a>
-      
-    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

@@ -26,6 +26,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://frds.io/measures/anomaly_score/</loc>
+         <lastmod>2021-07-22</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://frds.io/measures/bhc_dividend_to_assets/</loc>
          <lastmod>2021-07-22</lastmod>
          <changefreq>daily</changefreq>
@@ -96,7 +101,7 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://frds.io/measures/default_insurance_premium/</loc>
+         <loc>https://frds.io/measures/distress_insurance_premium/</loc>
          <lastmod>2021-07-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
