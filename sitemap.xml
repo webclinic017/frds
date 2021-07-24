@@ -126,6 +126,11 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://frds.io/measures/hhi_index/</loc>
+         <lastmod>2021-07-24</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://frds.io/measures/kyle_lambda/</loc>
          <lastmod>2021-07-24</lastmod>
          <changefreq>daily</changefreq>
